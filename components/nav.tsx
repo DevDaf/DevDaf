@@ -55,7 +55,7 @@ export function Nav() {
           {/* RESUME BUTTON */}
           <li className="ml-4">
             <a
-              href="/dafinacv.pdf"
+              href="/dafinacv.pdf.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="neon-border inline-block border border-primary px-6 py-2 text-sm font-bold tracking-widest text-primary transition-all hover:bg-primary hover:text-background"
