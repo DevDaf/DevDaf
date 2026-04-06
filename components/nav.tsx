@@ -38,6 +38,7 @@ export function Nav() {
           <span className="text-primary neon-flicker">.</span>
         </a>
 
+        {/* Desktop nav */}
         <ul className="hidden items-center gap-10 md:flex">
           {navLinks.map((link) => (
             <li key={link.href}>
@@ -50,9 +51,11 @@ export function Nav() {
               </a>
             </li>
           ))}
+
+          {/* RESUME BUTTON */}
           <li className="ml-4">
             <a
-              href="/Dafina%20Gashi%20Cv%20%20Svenska.pdf"
+              href="/dafinacv.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="neon-border inline-block border border-primary px-6 py-2 text-sm font-bold tracking-widest text-primary transition-all hover:bg-primary hover:text-background"
@@ -62,15 +65,21 @@ export function Nav() {
           </li>
         </ul>
 
+        {/* Mobile toggle */}
         <button
           className="relative z-50 text-foreground md:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
         >
-          {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {mobileOpen ? (
+            <X className="h-6 w-6" />
+          ) : (
+            <Menu className="h-6 w-6" />
+          )}
         </button>
       </nav>
 
+      {/* Mobile menu */}
       <div
         className={`fixed inset-0 z-40 flex flex-col items-center justify-center bg-background/98 backdrop-blur-xl transition-all duration-500 md:hidden ${
           mobileOpen ? "opacity-100" : "pointer-events-none opacity-0"
@@ -88,9 +97,11 @@ export function Nav() {
               </a>
             </li>
           ))}
+
+          {/* MOBILE RESUME */}
           <li className="mt-4">
             <a
-              href="/Dafina%20Gashi%20Cv%20%20Svenska.pdf"
+              href="/dafinacv.pdf"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMobileOpen(false)}
