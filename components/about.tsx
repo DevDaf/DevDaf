@@ -24,7 +24,6 @@ const tools = [
 export function About() {
   return (
     <section id="about" className="relative px-6 py-32 md:px-12 lg:px-16 xl:px-20">
-      {/* Decorative floating element */}
       <div className="pointer-events-none absolute top-20 right-10 h-40 w-40 rounded-full border border-primary/5 animate-float" />
       <div className="pointer-events-none absolute bottom-20 left-10 h-24 w-24 rounded-full border border-primary/5 animate-float" style={{ animationDelay: "1.5s" }} />
 
@@ -32,37 +31,25 @@ export function About() {
         <SectionHeading number="01" title="About Me" />
 
         <div className="grid gap-12 lg:grid-cols-2">
-          {/* Left: Bio text */}
           <div className="space-y-6">
             <ScrollReveal delay={100}>
               <p className="text-lg leading-relaxed text-muted-foreground">
-                {"I'm a "}
-                <span className="font-semibold text-primary">frontend developer</span>
-                {" with a growing full-stack skill set. I love crafting "}
-                <span className="font-semibold text-primary">pixel-perfect interfaces</span>
-                {" and building digital products that are intuitive, fast, and enjoyable to use."}
+                I'm a <span className="font-semibold text-primary">frontend developer</span> focused on building modern, high-quality user interfaces. I love crafting <span className="font-semibold text-primary">pixel-perfect interfaces</span> and creating digital products that are intuitive, fast, and enjoyable to use.
               </p>
             </ScrollReveal>
 
             <ScrollReveal delay={200}>
               <p className="text-lg leading-relaxed text-muted-foreground">
-                {"With over "}
-                <span className="font-medium text-foreground">1+ year of professional experience</span>
-                {", I've worked across both "}
-                <span className="font-medium text-foreground">startup environments</span>
-                {" and "}
-                <span className="font-medium text-foreground">e-commerce projects</span>
-                {". I care deeply about writing clean, maintainable code and I'm always looking to broaden my horizons and learn from experienced teams."}
+                With over <span className="font-medium text-foreground">1+ year of professional experience</span>, I've worked across <span className="font-medium text-foreground">startup environments</span> and <span className="font-medium text-foreground">e-commerce projects</span>. I care deeply about writing clean, maintainable code and continuously improving my skills.
               </p>
             </ScrollReveal>
 
             <ScrollReveal delay={300}>
               <p className="text-lg leading-relaxed text-muted-foreground">
-                {"I'm currently seeking a position where I can grow as a developer, contribute to a collaborative team, and take on challenges that push me forward. I thrive when I'm learning from others."}
+                I'm currently seeking a frontend developer position where I can grow, contribute to a collaborative team, and take on challenges that push me forward.
               </p>
             </ScrollReveal>
 
-            {/* Tools grid */}
             <ScrollReveal delay={350}>
               <div className="mt-8">
                 <h4 className="mb-4 font-mono text-xs tracking-wider text-primary/70 uppercase">
@@ -82,13 +69,13 @@ export function About() {
             </ScrollReveal>
           </div>
 
-          {/* Right: Skills */}
           <div className="space-y-5">
             <ScrollReveal delay={100}>
               <h4 className="mb-6 font-mono text-xs tracking-wider text-primary/70 uppercase">
                 Technical skills
               </h4>
             </ScrollReveal>
+
             {skills.map((skill, i) => (
               <ScrollReveal key={skill.name} delay={150 + i * 75}>
                 <div className="group">
@@ -100,10 +87,14 @@ export function About() {
                       {skill.level}%
                     </span>
                   </div>
+
                   <div className="h-2 w-full overflow-hidden rounded-full bg-muted">
                     <div
                       className="skill-bar-fill h-full rounded-full bg-gradient-to-r from-primary to-primary/60"
-                      style={{ "--skill-level": `${skill.level}%`, width: `${skill.level}%` } as React.CSSProperties}
+                      style={{
+                        "--skill-level": `${skill.level}%`,
+                        width: `${skill.level}%`,
+                      } as React.CSSProperties}
                     />
                   </div>
                 </div>
@@ -111,29 +102,6 @@ export function About() {
             ))}
           </div>
         </div>
-
-        {/* Stats row */}
-        <ScrollReveal delay={400}>
-          <div className="mt-20 grid grid-cols-3 gap-px overflow-hidden rounded-lg border border-primary/10 bg-primary/10">
-            {[
-              { value: "3", label: "Projects Delivered" },
-              { value: "2", label: "Happy Clients" },
-              { value: "1+", label: "Years Experience" },
-            ].map((stat) => (
-              <div
-                key={stat.label}
-                className="glow-pulse-hover group flex flex-col items-center gap-2 bg-background px-6 py-10 transition-colors hover:bg-primary/5"
-              >
-                <span className="neon-flicker text-4xl font-black text-primary neon-text md:text-5xl">
-                  {stat.value}
-                </span>
-                <span className="font-mono text-xs tracking-wider text-muted-foreground uppercase">
-                  {stat.label}
-                </span>
-              </div>
-            ))}
-          </div>
-        </ScrollReveal>
       </div>
     </section>
   )

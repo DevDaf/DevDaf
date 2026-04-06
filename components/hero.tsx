@@ -7,8 +7,8 @@ import { HackerScreen } from "@/components/hacker-screen"
 
 const roles = [
   "Frontend Developer",
-  "Full-Stack Developer",
-  "E-Commerce Specialist",
+  "React Developer",
+  "UI Developer",
   "Web Developer",
 ]
 
@@ -43,14 +43,12 @@ export function Hero() {
       id="hero"
       className="relative flex min-h-screen items-center px-6 py-24 md:px-12 lg:px-16 xl:px-20"
     >
-      {/* Decorative corner brackets */}
       <div className="pointer-events-none absolute top-20 left-6 h-16 w-16 border-l border-t border-primary/20 md:left-12" />
       <div className="pointer-events-none absolute top-20 right-6 h-16 w-16 border-r border-t border-primary/20 md:right-12" />
       <div className="pointer-events-none absolute bottom-20 left-6 h-16 w-16 border-l border-b border-primary/20 md:left-12" />
       <div className="pointer-events-none absolute right-6 bottom-20 h-16 w-16 border-r border-b border-primary/20 md:right-12" />
 
       <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
-        {/* Left column - Text content */}
         <div className="relative z-10">
           <div className="mb-6 flex items-center gap-3 opacity-0 animate-fade-in-up stagger-1">
             <div className="h-px w-8 bg-primary" />
@@ -77,12 +75,12 @@ export function Hero() {
           </div>
 
           <p className="mb-10 max-w-lg text-base leading-relaxed text-muted-foreground opacity-0 animate-fade-in-up stagger-4">
-            I build modern, high-performance web applications and e-commerce
-            experiences. Passionate about clean code, pixel-perfect interfaces,
-            and always looking to grow under great teams.
+            I build modern, high-performance frontend experiences with a strong
+            focus on clean code, responsive design, and pixel-perfect user
+            interfaces. I'm passionate about creating products that feel both
+            intuitive and polished.
           </p>
 
-          {/* Stats row */}
           <div className="mb-10 flex items-center gap-8 opacity-0 animate-fade-in-up stagger-4">
             {[
               { value: "3+", label: "Projects" },
@@ -122,27 +120,23 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Right column - Hacker screen with image */}
         <div className="relative hidden opacity-0 animate-fade-in-up stagger-3 lg:block">
-          {/* Glow behind the screen */}
           <div className="absolute -inset-4 rounded-2xl bg-primary/5 blur-3xl" />
           <div className="relative h-[480px] xl:h-[520px]">
             <HackerScreen />
           </div>
-          {/* Floating status badge */}
           <div className="absolute -bottom-4 -left-4 flex items-center gap-2 rounded border border-primary/20 bg-background/90 px-4 py-2 backdrop-blur-sm">
             <span className="relative flex h-2.5 w-2.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary/60" />
               <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-primary" />
             </span>
             <span className="font-mono text-xs text-foreground/80">
-              Open to work
+              Open to frontend roles
             </span>
           </div>
         </div>
       </div>
 
-      {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in-up stagger-6">
         <div className="flex flex-col items-center gap-2">
           <span className="font-mono text-[10px] tracking-widest text-muted-foreground uppercase">

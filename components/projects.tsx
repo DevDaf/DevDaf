@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { SectionHeading } from "@/components/section-heading"
 import { ScrollReveal } from "@/components/scroll-reveal"
 import { ExternalLink, Folder, ArrowUpRight, Lock, ShieldAlert } from "lucide-react"
@@ -8,9 +9,10 @@ const featuredProjects = [
   {
     title: "B2C E-Commerce Store",
     description:
-      "A full-featured business-to-consumer e-commerce website built with a modern tech stack. Designed for an optimal shopping experience with responsive layouts, product filtering, and seamless checkout flow.",
+      "A modern business-to-consumer e-commerce website built with a strong focus on frontend performance, responsive layouts, product filtering, and a smooth user journey from browsing to checkout.",
     tech: ["Next.js", "Tailwind CSS", "Node.js"],
-    external: "#",
+    external: "https://fruktia.vercel.app/",
+    image: "/images/fruktia.png",
     hasLiveLink: true,
     codePrivate: true,
     classified: false,
@@ -18,19 +20,21 @@ const featuredProjects = [
   {
     title: "B2B E-Commerce Platform",
     description:
-      "A business-to-business e-commerce platform tailored for wholesale and bulk ordering. Features include custom pricing tiers, order management, and a professional storefront designed for business clients.",
+      "A business-to-business e-commerce platform built for wholesale and bulk ordering, with a strong emphasis on usability, responsive frontend development, and a polished experience tailored for business customers.",
     tech: ["Next.js", "Tailwind CSS", "Node.js"],
-    external: "#",
+    external: "https://www.frukthallen.se/",
+    image: "/images/frukthallenimage.png",
     hasLiveLink: true,
     codePrivate: true,
     classified: false,
   },
   {
-    title: "Startup App — Arcledi OU",
+    title: "Startup App - Arcledi OU",
     description:
-      "A full-stack web application built during my 6-month internship at Arcledi OU. Developed both frontend and backend from scratch in a fast-paced startup environment. The project didn\u2019t launch due to funding challenges, but the experience was invaluable.",
+      "A startup web application developed during my 6-month internship at Arcledi OU. I worked primarily on the frontend, building user-facing features and interfaces in a fast-paced startup environment. The project did not launch due to funding challenges, but the experience was highly valuable.",
     tech: ["Next.js", "React", "Node.js", "Firebase", "Tailwind CSS"],
     external: null,
+    image: null,
     hasLiveLink: false,
     codePrivate: true,
     classified: true,
@@ -41,22 +45,22 @@ const portfolioProjects = [
   {
     title: "Portfolio Website",
     description:
-      "This very portfolio you're looking at! Built to showcase my work with cool visual effects and a neon-punk aesthetic.",
+      "This portfolio website was built to showcase my work, frontend skills, and design approach through an interactive and visually distinctive experience.",
     tech: ["Next.js", "Tailwind CSS", "TypeScript"],
     external: null,
   },
   {
     title: "Coming Soon",
     description:
-      "Currently building more projects to expand my portfolio and sharpen my skills across different domains.",
+      "I'm currently building more frontend projects to expand my portfolio and strengthen my experience across different user-facing products.",
     tech: ["React", "Firebase", "MongoDB"],
     external: null,
   },
   {
     title: "Open to Ideas",
     description:
-      "Always looking for interesting side projects and collaborations. Have an idea? Let's talk about building it together.",
-    tech: ["Full-Stack", "E-Commerce", "Web Apps"],
+      "I'm always open to interesting frontend projects and creative collaborations. If you have an idea, I'd love to explore how it could be brought to life.",
+    tech: ["Frontend", "E-Commerce", "Web Apps"],
     external: null,
   },
 ]
@@ -64,13 +68,9 @@ const portfolioProjects = [
 function ClassifiedOverlay() {
   return (
     <div className="absolute inset-0 z-20 overflow-hidden rounded">
-      {/* Dark overlay */}
       <div className="absolute inset-0 bg-background/80 backdrop-blur-sm" />
 
-      {/* Diagonal crime tape strips */}
-      <div
-        className="absolute -left-10 top-[20%] w-[140%] rotate-[-12deg] border-y-2 border-primary bg-primary/10 py-2"
-      >
+      <div className="absolute -left-10 top-[20%] w-[140%] rotate-[-12deg] border-y-2 border-primary bg-primary/10 py-2">
         <div className="flex animate-marquee gap-8 whitespace-nowrap">
           {Array.from({ length: 20 }).map((_, i) => (
             <span
@@ -83,9 +83,7 @@ function ClassifiedOverlay() {
         </div>
       </div>
 
-      <div
-        className="absolute -left-10 top-[55%] w-[140%] rotate-[8deg] border-y-2 border-primary bg-primary/10 py-2"
-      >
+      <div className="absolute -left-10 top-[55%] w-[140%] rotate-[8deg] border-y-2 border-primary bg-primary/10 py-2">
         <div className="flex animate-marquee-reverse gap-8 whitespace-nowrap">
           {Array.from({ length: 20 }).map((_, i) => (
             <span
@@ -98,9 +96,7 @@ function ClassifiedOverlay() {
         </div>
       </div>
 
-      <div
-        className="absolute -left-10 top-[80%] w-[140%] rotate-[-5deg] border-y border-primary/50 bg-primary/5 py-1.5"
-      >
+      <div className="absolute -left-10 top-[80%] w-[140%] rotate-[-5deg] border-y border-primary/50 bg-primary/5 py-1.5">
         <div className="flex animate-marquee gap-8 whitespace-nowrap">
           {Array.from({ length: 20 }).map((_, i) => (
             <span
@@ -113,7 +109,6 @@ function ClassifiedOverlay() {
         </div>
       </div>
 
-      {/* Center lock icon + message */}
       <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3">
         <div className="relative">
           <div className="absolute -inset-6 animate-pulse rounded-full bg-primary/20" />
@@ -132,7 +127,6 @@ function ClassifiedOverlay() {
         </div>
       </div>
 
-      {/* Corner markers */}
       <div className="absolute top-3 left-3 h-5 w-5 border-t-2 border-l-2 border-primary/60" />
       <div className="absolute top-3 right-3 h-5 w-5 border-t-2 border-r-2 border-primary/60" />
       <div className="absolute bottom-3 left-3 h-5 w-5 border-b-2 border-l-2 border-primary/60" />
@@ -147,12 +141,10 @@ export function Projects() {
       <div className="mx-auto max-w-7xl">
         <SectionHeading number="03" title="Projects" />
 
-        {/* Featured projects */}
         <div className="space-y-32">
           {featuredProjects.map((project, i) => (
             <ScrollReveal key={project.title}>
               <div className="group relative">
-                {/* Large project number */}
                 <span className="pointer-events-none absolute -top-8 -left-4 font-mono text-[120px] font-black leading-none text-primary/5 md:-top-12 md:-left-8 md:text-[180px]">
                   0{i + 1}
                 </span>
@@ -162,14 +154,46 @@ export function Projects() {
                     i % 2 !== 0 ? "md:text-right" : ""
                   }`}
                 >
-                  {/* Project image / preview */}
                   <div
                     className={`relative overflow-hidden rounded border border-primary/10 md:col-span-7 ${
                       i % 2 !== 0 ? "md:order-2" : ""
                     } ${!project.classified ? "glow-pulse-hover" : ""}`}
                   >
-                    <div className="aspect-video w-full bg-gradient-to-br from-muted to-background transition-all duration-500 group-hover:scale-[1.02]">
-                      {/* Decorative grid pattern inside */}
+                    <div className="relative aspect-video w-full overflow-hidden bg-gradient-to-br from-muted to-background transition-all duration-500 group-hover:scale-[1.02]">
+                      {!project.classified && project.external ? (
+                        <a
+                          href={project.external}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="absolute inset-0 z-10 block"
+                          aria-label={`Open ${project.title}`}
+                        >
+                          {project.image ? (
+                            <Image
+                              src={project.image}
+                              alt={project.title}
+                              fill
+                              className="object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+                          ) : (
+                            <div className="absolute inset-0 bg-gradient-to-br from-muted to-background" />
+                          )}
+                        </a>
+                      ) : (
+                        <>
+                          {project.image ? (
+                            <Image
+                              src={project.image}
+                              alt={project.title}
+                              fill
+                              className="object-cover"
+                            />
+                          ) : (
+                            <div className="absolute inset-0 bg-gradient-to-br from-muted to-background" />
+                          )}
+                        </>
+                      )}
+
                       <div
                         className="absolute inset-0 opacity-30"
                         style={{
@@ -178,16 +202,26 @@ export function Projects() {
                           backgroundSize: "20px 20px",
                         }}
                       />
+
                       {!project.classified && (
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="flex flex-col items-center gap-2">
-                            <span className="font-mono text-xs tracking-widest text-primary/40 uppercase">
-                              {project.hasLiveLink
-                                ? "Live Website"
-                                : "Private Project"}
-                            </span>
+                        <div className="absolute inset-0 z-20 flex items-center justify-center">
+                          <div className="flex flex-col items-center gap-2 rounded bg-background/30 px-4 py-3 backdrop-blur-sm">
+                            {project.external ? (
+                              <a
+                                href={project.external}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="font-mono text-xs tracking-widest text-primary/80 uppercase hover:text-primary hover:underline"
+                              >
+                                {project.hasLiveLink ? "Live Website" : "Private Project"}
+                              </a>
+                            ) : (
+                              <span className="font-mono text-xs tracking-widest text-primary/40 uppercase">
+                                {project.hasLiveLink ? "Live Website" : "Private Project"}
+                              </span>
+                            )}
                             {project.codePrivate && (
-                              <div className="flex items-center gap-1.5 text-muted-foreground/30">
+                              <div className="flex items-center gap-1.5 text-muted-foreground/50">
                                 <Lock className="h-3 w-3" />
                                 <span className="font-mono text-[10px] tracking-wider uppercase">
                                   Code is private
@@ -198,19 +232,18 @@ export function Projects() {
                         </div>
                       )}
                     </div>
+
                     {!project.classified && (
-                      <div className="absolute inset-0 bg-primary/5 transition-opacity group-hover:opacity-0" />
-                    )}
-                    {/* Neon border on hover */}
-                    {!project.classified && (
-                      <div className="absolute inset-0 rounded border border-primary/0 transition-all duration-500 group-hover:border-primary/30" />
+                      <div className="pointer-events-none absolute inset-0 bg-primary/10 transition-opacity group-hover:opacity-0" />
                     )}
 
-                    {/* Classified crime-tape overlay */}
+                    {!project.classified && (
+                      <div className="pointer-events-none absolute inset-0 rounded border border-primary/0 transition-all duration-500 group-hover:border-primary/30" />
+                    )}
+
                     {project.classified && <ClassifiedOverlay />}
                   </div>
 
-                  {/* Project content */}
                   <div
                     className={`relative z-10 md:col-span-6 ${
                       i % 2 !== 0
@@ -221,6 +254,7 @@ export function Projects() {
                     <p className="mb-2 font-mono text-xs tracking-wider text-primary uppercase">
                       {project.classified ? "Classified Project" : "Featured Project"}
                     </p>
+
                     <h3 className="mb-4 text-2xl font-bold text-foreground transition-colors group-hover:text-primary md:text-3xl">
                       {project.external ? (
                         <a
@@ -241,11 +275,13 @@ export function Projects() {
                         </span>
                       )}
                     </h3>
+
                     <div className="rounded border border-border/50 bg-card/80 p-6 shadow-2xl backdrop-blur-sm">
                       <p className="text-sm leading-relaxed text-muted-foreground">
                         {project.description}
                       </p>
                     </div>
+
                     <ul
                       className={`mt-4 flex flex-wrap gap-3 font-mono text-xs text-muted-foreground ${
                         i % 2 !== 0 ? "md:justify-end" : ""
@@ -257,6 +293,7 @@ export function Projects() {
                         </li>
                       ))}
                     </ul>
+
                     <div
                       className={`mt-4 flex items-center gap-4 ${
                         i % 2 !== 0 ? "md:justify-end" : ""
@@ -268,6 +305,7 @@ export function Projects() {
                           Private repo
                         </span>
                       )}
+
                       {project.external && (
                         <a
                           href={project.external}
@@ -287,7 +325,6 @@ export function Projects() {
           ))}
         </div>
 
-        {/* Other noteworthy / upcoming projects */}
         <div className="mt-32">
           <ScrollReveal>
             <h3 className="mb-2 text-center text-2xl font-bold text-foreground">
@@ -302,7 +339,6 @@ export function Projects() {
             {portfolioProjects.map((project, i) => (
               <ScrollReveal key={project.title} delay={i * 100}>
                 <div className="glow-pulse-hover group relative flex h-full flex-col overflow-hidden rounded border border-border/50 bg-card/50 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:bg-card/80">
-                  {/* Top glow line on hover */}
                   <div className="absolute top-0 left-0 h-px w-0 bg-gradient-to-r from-primary to-primary/0 transition-all duration-500 group-hover:w-full" />
 
                   <div className="mb-6 flex items-center justify-between">
@@ -321,12 +357,15 @@ export function Projects() {
                       )}
                     </div>
                   </div>
+
                   <h4 className="mb-2 text-lg font-bold text-foreground transition-colors group-hover:text-primary">
                     {project.title}
                   </h4>
+
                   <p className="mb-6 flex-1 text-sm leading-relaxed text-muted-foreground">
                     {project.description}
                   </p>
+
                   <ul className="flex flex-wrap gap-3 font-mono text-[10px] tracking-wider text-muted-foreground/60 uppercase">
                     {project.tech.map((t) => (
                       <li key={t}>{t}</li>

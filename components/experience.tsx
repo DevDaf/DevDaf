@@ -11,7 +11,7 @@ const experiences = [
     location: "Remote",
     url: "#",
     title: "Frontend Developer",
-    range: "2025 -- Present",
+    range: "2025 - Present",
     projects: [
       {
         name: "B2B Platform",
@@ -24,9 +24,9 @@ const experiences = [
     ],
     points: [
       "Solely responsible for building and maintaining the entire frontend codebase, handling all UI development and feature implementation independently.",
-      "Developed two complete e-commerce websites -- one B2C and one B2B -- using modern frameworks and responsive design principles.",
-      "Gained deep ownership experience managing the full frontend workflow from design translation to production deployment.",
-      "Actively seeking a collaborative team environment to accelerate growth and learn from experienced developers.",
+      "Developed two complete e-commerce websites, one B2C and one B2B, using modern frameworks and responsive design principles.",
+      "Gained strong ownership experience by managing the full frontend workflow from design handoff to production deployment.",
+      "Now looking for a collaborative team environment where I can continue to grow as a frontend developer and learn from experienced colleagues.",
     ],
     skills: ["Next.js", "React", "Tailwind CSS", "Node.js", "Shopify"],
   },
@@ -34,15 +34,15 @@ const experiences = [
     company: "Arcledi OU",
     location: "Estonia",
     url: "#",
-    title: "Full-Stack Developer (Internship)",
-    range: "2024 -- 2025",
+    title: "Frontend Developer Intern",
+    range: "2024 - 2025",
     points: [
-      "Worked as a full-stack developer during a 6-month internship building a web application from the ground up.",
-      "Contributed to both frontend and backend development using React, Next.js, Node.js, and Firebase as the primary tech stack.",
-      "Collaborated with the founding team on architecture decisions and feature implementations in a fast-paced startup environment.",
-      "The project unfortunately did not go live due to funding challenges, but the experience provided invaluable full-stack development skills.",
+      "Worked on a startup web application during a 6-month internship, contributing primarily to the frontend.",
+      "Built and improved user-facing features using React, Next.js, Tailwind CSS, and Firebase.",
+      "Collaborated with the founding team on interface implementation, product decisions, and feature development in a fast-paced startup environment.",
+      "Although the project did not launch due to funding challenges, the experience gave me valuable hands-on experience in frontend development.",
     ],
-    skills: ["Next.js", "React", "Node.js", "Firebase", "Tailwind CSS"],
+    skills: ["Next.js", "React", "Tailwind CSS", "Firebase", "Node.js"],
   },
 ]
 
@@ -156,7 +156,7 @@ export function Experience() {
                       href={project.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm font-medium text-primary hover:underline"
+                      className="inline-flex items-center gap-2 rounded border border-primary/20 bg-primary/5 px-4 py-2 text-sm font-medium text-primary transition-colors hover:border-primary/40 hover:bg-primary/10"
                     >
                       {project.name}
                       <ExternalLink className="h-4 w-4" />
